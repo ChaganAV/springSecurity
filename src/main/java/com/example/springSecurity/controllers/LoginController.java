@@ -6,15 +6,30 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/login")
+//@RequestMapping("/login")
 public class LoginController {
-    @GetMapping
+    @GetMapping("/login")
     public String registerForm(){
         return "login";
     }
 
-    @PostMapping
+    @GetMapping("/public-data")
+    public String userPage(){
+        return "public-data";
+    }
+
+    @GetMapping("/private-data")
+    public String adminPage(){
+        return "private-page";
+    }
+
+    @PostMapping("/login")
     public String register(){
         return "redirect:/private-data";
+    }
+
+    @GetMapping("/error")
+    public String error(){
+        return "error";
     }
 }

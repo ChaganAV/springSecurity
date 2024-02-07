@@ -1,7 +1,7 @@
 ## Ошибка
-Не переходит между страничками
-И логику перехода я не уловил.
-Насколько я понял эта логика вынесена в класс SecurityConfig
+При правильном пароле не переходит на private-data,
+но при неправильном переходит на error
+
 
 При использовании метода configureGlobal(AuthenticationManagerBuilder auth) с PasswordEncoder
 вышла ошибка java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field 'com.sun.tools.javac.tree.JCTree qualid'
