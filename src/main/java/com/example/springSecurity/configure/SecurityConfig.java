@@ -14,9 +14,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-@AllArgsConstructor
+//@AllArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    private PasswordEncoder passwordEncoder;
+    //private PasswordEncoder passwordEncoder;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http

@@ -1,9 +1,13 @@
 ## Ошибка
-Когда я добавил метод configureGlobal(AuthenticationManagerBuilder auth)
+Не переходит между страничками
+И логику перехода я не уловил.
+Насколько я понял эта логика вынесена в класс SecurityConfig
+
+При использовании метода configureGlobal(AuthenticationManagerBuilder auth) с PasswordEncoder
 вышла ошибка java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field 'com.sun.tools.javac.tree.JCTree qualid'
 Эта же ошибка выходила когда я изначально пробовал
-по книге "Spring в действии", не смог разобраться, вернулся к конспекту лекции
-Без этого метода ошибки нет, но переда на странички не происходит
+по книге "Spring в действии", не смог разобраться, вернулся к конспекту лекции,
+но там тоже используется PasswordEncoder и та же ошибка 
 
 ## Spring Security. Работа с JWT. Защита от основных видов атак.
 Базовое задание:
