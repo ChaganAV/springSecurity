@@ -1,3 +1,10 @@
+## Ошибка
+Когда я добавил метод configureGlobal(AuthenticationManagerBuilder auth)
+вышла ошибка java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field 'com.sun.tools.javac.tree.JCTree qualid'
+Эта же ошибка выходила когда я изначально пробовал
+по книге "Spring в действии", не смог разобраться, вернулся к конспекту лекции
+Без этого метода ошибки нет, но переда на странички не происходит
+
 ## Spring Security. Работа с JWT. Защита от основных видов атак.
 Базовое задание:
 Внимание ДЗ выполнять в версии SpringBoot:2.7.14(модули security и web)
