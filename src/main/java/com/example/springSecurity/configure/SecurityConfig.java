@@ -16,8 +16,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/login").permitAll()
-                .anyRequest().authenticated()
+                .antMatchers("/private-data").hasRole("ADMIN")
+                .antMatchers("/public-data").authenticated()
+                .and()
+                .formLogin()
+                .and()
+                .logout().logoutSuccessUrl("/login")
+                //.anyRequest().authenticated()
                 .and()
                 .addFilter(new JwtAuthenticationFilter(authenticationManager()))
                 .addFilterBefore(new JwtAuthenticationFilter(authenticationManager()),
