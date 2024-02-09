@@ -22,15 +22,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/private-data").hasRole("ADMIN")
-                .antMatchers("/public-data").authenticated()
+                .antMatchers("/private-data").hasRole("ADMIN") // на этот ресурс требуется роль админ
+                .antMatchers("/public-data").authenticated() // требуется аутентификация пользователя
+                .and()// разделяем фильтры
+                .formLogin()// страница логина
+                //.loginPage("/login") // воспользуемся страничкой логина Spring
+                .permitAll() // разрешаем всем пользоваться этой страницей
+                .loginProcessingUrl("/process_login")// переход на обработку запроса
+                .defaultSuccessUrl("/public-data")// после идентификации переход на страничку
                 .and()
-                .formLogin()
-                //.loginPage("/login")
-                .permitAll()
-                .defaultSuccessUrl("/public-data")
-                .and()
-                .logout().logoutSuccessUrl("/login")
+                .logout().logoutSuccessUrl("/login")// после выхода направление на страничку
                 //.anyRequest().authenticated()
                 .and()
                 .addFilter(new JwtAuthenticationFilter(authenticationManager()))
